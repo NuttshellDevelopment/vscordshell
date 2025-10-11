@@ -95,6 +95,8 @@ export class RPCController {
         });
         const fileSelectionChanged = window.onDidChangeTextEditorSelection((e) => {
             if (e.textEditor !== dataClass.editor) return;
+            logInfo("onDidChangeTextEditorSelection()");
+            dataClass.updateGitInfo();
             void this.activityThrottle.callable();
         });
         const debugStart = debug.onDidStartDebugSession(() => sendActivity());
@@ -102,7 +104,8 @@ export class RPCController {
         const diagnosticsChange = languages.onDidChangeDiagnostics(() => onDiagnosticsChange());
        const changeWindowState = window.onDidChangeWindowState((e: WindowState) => {
             logInfo("onDidChangeWindowState()");
-            this.checkIdle(e)
+            dataClass.updateGitInfo();
+            this.checkIdle(e);
         });
 
         // fire checkIdle at least once after loading
