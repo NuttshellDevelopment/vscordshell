@@ -1,4 +1,11 @@
 <div align="center">
+Forked from [!narcisbugeag/vscord](https://github.com/narcisbugeag/vscord) - Big thank you to them! 
+</div>
+
+<br />
+
+
+<div align="center">
 
 [<img width="256" alt="VSCord Logo" src="https://i.imgur.com/n7ieZfW.png" />][vsmp-link]
 
